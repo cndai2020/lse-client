@@ -35,3 +35,4 @@ jobs:
         with:
           name: lse-macos
           path: build/macos/Build/Products/Release/lse-macos.zip
+# Build trigger
