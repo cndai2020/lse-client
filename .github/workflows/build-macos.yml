@@ -1,0 +1,37 @@
+name: Build macOS App
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-13
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.5'
+          channel: 'stable'
+
+      - name: Install macOS dependencies
+        run: flutter pub get
+
+      - name: Build macOS Release
+        run: flutter build macos --release
+
+      - name: Package app bundle
+        run: |
+          cd build/macos/Build/Products/Release
+          zip -r lse-macos.zip LocalSend\ Enterprise.app
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lse-macos
+          path: build/macos/Build/Products/Release/lse-macos.zip

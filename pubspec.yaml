@@ -1,0 +1,52 @@
+name: lse_client
+description: LocalSend Enterprise - 企业换机文件传输工具
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 文件压缩/解压
+  archive: ^3.4.0
+
+  # HTTP 客户端
+  http: ^1.1.0
+
+  # 通知
+  flutter_local_notifications: ^13.0.0
+
+  # 网络信息
+  network_info_plus: ^4.0.0
+
+  # UUID
+  uuid: ^4.0.0
+
+  # 文件路径
+  path_provider: ^2.1.0
+  path: ^1.8.3
+
+  # 权限
+  permission_handler: ^11.0.0
+
+  # 文件选择
+  file_picker: ^6.1.0
+
+  # intl
+  intl: ^0.18.0
+
+  # 文件 hash（SHA256）
+  crypto: ^3.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
