@@ -28,11 +28,11 @@ jobs:
 
       - name: Package exe
         run: |
-          cd build/windows/runner/Release
+          cd build/windows/x64/runner/Release
           Compress-Archive -Path * -DestinationPath lse-windows.zip
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: lse-windows
-          path: build/windows/runner/Release/lse-windows.zip
+          path: build/windows/x64/runner/Release/lse-windows.zip
